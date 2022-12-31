@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
         api.get(`users/w-araujo/repos?sort=created`).then(response => {
             setRepository(response.data)
         })
-    })
+    }, [])
     
     return (
         <Background>
