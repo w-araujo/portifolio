@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-const GlobalSyle =  createGlobalStyle`
+const GlobalSyle = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
@@ -10,8 +10,11 @@ const GlobalSyle =  createGlobalStyle`
 }
 
 body {
-    background-color: #000123;
+    background-color: #0e0e0e;
     color: white;
+    a {
+    color: white;
+  }
 }
 `;
 

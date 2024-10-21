@@ -1,39 +1,80 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Container,
+  LeftSide,
+  Main,
+  RightSide,
+  CarouselContainer,
+  Items,
+  Entry,
+  Faders,
+  LeftFade,
+  RightFade,
+  EntryFinal,
+} from "./styles";
+import { Nav } from "../../components/Nav";
 
-import { Background, LeftSide, RigthSide, Tittle, SocialMedia } from './styles';
-
-import cellphoneImg from '../../assets/cellphone.png';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import Button from '../../components/Button';
+import pright from "../../assets/back-right.png";
+import Rabbit from "../../assets/carousel/rabbit.png";
+import Node from "../../assets/carousel/node.png";
+import Jest from "../../assets/carousel/jest.png";
+import Postgres from "../../assets/carousel/postgres.png";
+import Docker from "../../assets/carousel/docker.png";
+import TS from "../../assets/carousel/ts.png";
+import Mongo from "../../assets/carousel/mongo.png";
+import Blip from "../../assets/carousel/blip.png";
 
 const HomePage: React.FC = () => {
-    return (
-        <Background>
-            <LeftSide>
-                <h1>Wesley Araujo</h1>
-                <Tittle>Programador</Tittle>
-                <SocialMedia>
-                    <a href='https://www.linkedin.com/in/wesley-araujo-a99198201/'  style={{marginRight: 15}} target='blank'>
+  return (
+    <Container>
+      <Nav />
+      <Main>
+        <LeftSide>
+          <h1>Olá, sou Wesley</h1>
+          <h2>
+            Um <strong>software developer</strong>, e amo
+          </h2>
+          <h2>estudar tecnologias. ❤️</h2>
+        </LeftSide>
+        <RightSide>
+          <img src={pright} alt="tec" />
+        </RightSide>
+      </Main>
 
-                        <BsLinkedin fontSize={50}/>
-                   </a>
-                   <a href='https://github.com/w-araujo' target='blank'>
-                        <BsGithub fontSize={50}/>
-                   </a>
-                </SocialMedia>
-                <Link to='/projects' style={{textDecoration: 'none'}}>
-                <Button value="Ver Projetos"/>
-                </Link>
-            </LeftSide>
-            <RigthSide>
-               <img src={cellphoneImg} style={{marginBottom: 30}} width='300'  alt=''/> 
-                <p>Site desenvolvido por Wesley Araujo</p>
-                <p>© 2022 Todos direitos reservados</p>
-            </RigthSide>
-        </Background>
-    )
+      <CarouselContainer>
+        <Faders>
+          <LeftFade />
+          <RightFade />
+        </Faders>
+        <Items>
+          <Entry>
+            <img src={Rabbit} alt="logo rabbitmq" />
+          </Entry>
+          <Entry>
+            <img src={Node} alt="logo node" />
+          </Entry>
+          <Entry>
+            <img src={Jest} alt="logo jest" />
+          </Entry>
+          <Entry>
+            <img src={Postgres} alt="logo postgres" />
+          </Entry>
+          <Entry>
+            <img src={Docker} alt="logo docker" />
+          </Entry>
+          <Entry>
+            <img src={TS} alt="logo typescript" />
+          </Entry>
+          <Entry>
+            <img src={Mongo} alt="logo mongo" />
+          </Entry>
+          <EntryFinal>
+            <img src={Blip} width={97} alt="logo blip" />
+          </EntryFinal>
+        </Items>
+      </CarouselContainer>
+    </Container>
+  );
+};
 
-}
-
-export default HomePage;
+export { HomePage };

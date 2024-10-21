@@ -1,26 +1,43 @@
-import React from 'react';
-import { ContainerWrap, Container, PinkSquare } from './style';
+import React from "react";
+import {
+  ContainerWrap,
+  Container,
+  BlueSquare,
+  ProjectTitle,
+  ProjectDescription,
+} from "./style";
 
 interface ProjectProps {
-    name: string;
-    description: string;
-    img: string;
-    html_url: string;
+  name: string;
+  description: string;
+  img: string;
+  html_url: string;
 }
 
-const Project: React.FC<ProjectProps> = ({html_url, name, description, img}) => {
-    return (
-        <ContainerWrap>
-            <a href={html_url} target='blank' style={{textDecoration: 'none'}}>
+const Project: React.FC<ProjectProps> = ({
+  html_url,
+  name,
+  description,
+  img,
+}) => {
+  return (
+    <ContainerWrap>
+      <a href={html_url} target="blank" style={{ textDecoration: "none" }}>
         <Container>
-            <PinkSquare/>   
-            <img src={img} width="200px" height="200px" style={{borderTopRightRadius: '60px'}} alt="Imagem do projeto" />
-            <h1 style={{marginTop: 10, marginBottom: 15, fontSize: 22, wordBreak: 'break-word'}}>{name}</h1>
-            <p style={{wordBreak: 'break-all', overflow: 'auto', height: 70}}>{description}</p>
+          <BlueSquare />
+          <img
+            src={img}
+            width="200px"
+            height="200px"
+            style={{ borderTopRightRadius: "60px" }}
+            alt="Imagem do projeto"
+          />
+          <ProjectTitle>{name}</ProjectTitle>
+          <ProjectDescription>{description}</ProjectDescription>
         </Container>
-        </a>
-        </ContainerWrap>
-    )
-}
+      </a>
+    </ContainerWrap>
+  );
+};
 
-export default Project;
+export { Project };

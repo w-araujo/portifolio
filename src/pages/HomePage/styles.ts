@@ -1,69 +1,164 @@
 import styled from "styled-components";
-import img from '../../assets/bg.png';
 
-export const Background = styled.div`
-h1 {
-    font-size: 50px;
-}
+export const Container = styled.div`
+  width: 100vw;
+`;
 
-a {
-    color: white;
-}
-height: 100vh;
-display: flex;
-justify-content: space-around;
-align-items: center;
-flex-wrap: wrap;
-background-image: url(${img});
-background-size: cover;
-@media only screen and (max-width: 710px) {
-    padding: 50px;
-    justify-content: center;
-    align-items: flex-start;
-    h1 {
-        font-size: 37px;
-    }
-    img {
-      display: none;
-    }
+export const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 75vh;
+
+  @media (max-width: 1252px) {
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
 `;
 
 export const LeftSide = styled.div`
-@media only screen and (max-width: 710px) {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  padding: 20px;
+  text-align: center;
+  h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
   }
-`
+  h2 {
+    font-size: 27px;
+    strong {
+      background: linear-gradient(to right, #1fddda, #a883f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 
-export const RigthSide = styled.div`
-p {
-  font-size: 14px;
-}
-text-align: center;
+  @media (max-width: 1252px) {
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+  }
 
-@media only screen and (max-width: 710px) {
-position: absolute;
-bottom: 5px;
-text-align: center;
-width: 100%;
-}
-`
-
-export const Tittle = styled.p`
-color: #ff0f7b;
-font-weight: bold;
-font-size: 40px;
-margin-top: 20px;
-margin-bottom: 50px;
-@media only screen and (max-width: 710px) {
-    font-size: 40px
+  @media (max-width: 800px) {
+    margin-top: 30px;
+    h1 {
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 25px;
+    }
   }
 `;
 
-export const SocialMedia = styled.div`
+export const RightSide = styled.div`
+  margin-top: 30px;
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 
-`
+  @media (max-width: 1252px) {
+    img {
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    margin-top: 0;
+    img {
+      max-width: 300px;
+    }
+  }
+`;
+
+export const CarouselContainer = styled.div`
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  display: flex;
+  width: 35%;
+  height: 13vh;
+  margin: 20px auto, 0px, 0px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media (max-width: 800px) {
+    width: 90%;
+    height: 14vh;
+  }
+  bottom: -35px;
+`;
+
+export const Items = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  animation: carouselAnim 20s infinite alternate linear;
+
+  @media (max-width: 768px) {
+    animation: carouselAnim 35s infinite alternate linear;
+  }
+
+  @keyframes carouselAnim {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(calc(-100% + (5 * 100px)));
+    }
+  }
+`;
+
+export const Entry = styled.div`
+  margin-right: -70px;
+  img {
+    width: 250px;
+  }
+`;
+
+export const Faders = styled.div`
+  width: 100%;
+  position: absolute;
+  height: 100%;
+`;
+
+export const LeftFade = styled.div`
+  background: linear-gradient(
+    to right,
+    rgb(20, 20, 20) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  width: 7%;
+  height: 100%;
+  position: absolute;
+  z-index: 200;
+`;
+
+export const RightFade = styled.div`
+  background: linear-gradient(
+    to left,
+    rgb(20, 20, 20) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  width: 7%;
+  height: 100%;
+  position: absolute;
+  z-index: 200;
+  right: 0;
+`;
+
+export const EntryFinal = styled.div`
+  margin-left: 50px;
+  img {
+    width: 96px;
+  }
+`;
